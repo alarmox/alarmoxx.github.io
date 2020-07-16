@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/alarmox.css">
+    <title>Save Web Form Data to Spreadsheets - Contact Form</title>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+function SubForm (){
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/410/',
+        type:'post',
+        data:$("#myForm").serializeArray(),
+        success: function(){
+          alert("Form Data Submitted :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+}
+</script>
+</head>
+
+<body>
+    <header>
+        <nav>
+
+        </nav>
+    </header>
+    <div id="mySidenav" class="sidenav">
+        <a href="#about" id="abt">About</a>
+        <a href="#blog" id="blg">Blog</a>
+        <a href="#projects" id="projcts">Projects</a>
+        <a href="#contact" id="contct">Contact</a>
+    </div>
+    <div class="ana">
+        <div class="bg-image"><img src="images/pills.jpg" alt="This is me!" title="Too many pills!" height="700px" ></div>
+        <div class="bg-text">
+            <h1>ALARMOX</h1>
+            <div class="imag2"><img src="images/alarmox.png" alt="This is me!" title="Too many pills!" height="100px" ></div>
+            <p>NEVER FORGET TO TAKE YOUR PILLS AGAIN!</p>
+        </div>
+    </div>
+    <div id="about">ABOUT</div>
+    <div id="contact">CONTACT</div>
+    <div class="container">
+        <form action="alarmox.html">
+      
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      
+          <label for="continent">Continent</label>
+          <select id="continent" name="continent">
+            <option value="australia">Australia</option>
+            <option value="asia">Asia</option>
+            <option value="asia">Africa</option>
+            <option value="asia">Europe</option>
+            <option value="usa">USA</option>
+          </select>
+      
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      
+          <input type="submit" value="Submit">
+      
+        </form>
+      </div>
+    <div class="image"><iframe width="480" height="270" src="https://www.powtoon.com/embed/fuOp6kOeu9I/" frameborder="0" allowfullscreen></iframe></div>
+</body>
+
+</html>
